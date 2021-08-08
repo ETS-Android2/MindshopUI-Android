@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "36875003176",
+    "project_id": "mindzoneshop",
+    "storage_bucket": "mindzoneshop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36875003176:android:b33df3c6e1045674e19c1d",
+        "android_client_info": {
+          "package_name": "net.mindzone.mindshopui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36875003176-pvuq28fv8i5ocp1floitjoq2fqoja7ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8GDb6RWLY71ih2r3_l0a82HHWKqCsdCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36875003176-pvuq28fv8i5ocp1floitjoq2fqoja7ri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "36875003176-78havckl9nmhhm55lvr08ad3mpcmupu6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.mindzone.MindshopUI"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

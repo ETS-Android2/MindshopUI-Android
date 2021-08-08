@@ -9,6 +9,7 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_main"
         android:backgroundTint="#e1e1e1"
         android:text="Button"
         android:textColor="@color/white"
