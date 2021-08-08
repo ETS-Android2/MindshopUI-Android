@@ -39,6 +39,8 @@ Thumbs.db
 *.app
 *.exe
 *.war
+*.ipa
+*.apk
 
 # Large media files
 *.mp4
