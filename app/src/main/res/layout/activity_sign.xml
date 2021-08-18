@@ -27,7 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView_Sign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/signToptext"
@@ -35,7 +35,6 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -54,12 +53,12 @@
         app:layout_constraintTop_toBottomOf="@+id/topElement">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/nameCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="50dp"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="50dp"
             app:cardBackgroundColor="@color/_F6F6F6"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp"
@@ -76,18 +75,19 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/emailCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="50dp"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
             app:cardBackgroundColor="@color/_F6F6F6"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp"
             app:cardMaxElevation="0dp">
 
             <EditText
+                android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
@@ -98,32 +98,43 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/passwordCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="50dp"
+            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
             app:cardBackgroundColor="@color/_F6F6F6"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp"
             app:cardMaxElevation="0dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:layout_width="280dp"
+                    android:id="@+id/passwordEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
                     android:background="@android:color/transparent"
-                    android:drawableEnd="@drawable/eye_crossed"
                     android:hint="@string/signuserpwText"
-                    android:importantForAutofill="no"
                     android:inputType="textPassword" />
-            </LinearLayout>
+                <Button
+                    android:id="@+id/eye_BTN"
+                    android:onClick="@eyeClicked"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/eye_crossed"
+                    android:background="@android:color/transparent"
+                    ></Button>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <Button
