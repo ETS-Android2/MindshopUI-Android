@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_forProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Products"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:shapeAppearanceOverlay="@style/PillShapeAppearance" />
+</LinearLayout>

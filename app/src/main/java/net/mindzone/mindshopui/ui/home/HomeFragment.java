@@ -9,25 +9,41 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import net.mindzone.mindshopui.BaseFragment;
 import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.activities.Sign;
+import net.mindzone.mindshopui.constants.MyRecyclerViewAdapter;
 import net.mindzone.mindshopui.databinding.FragmentHomeBinding;
+import net.mindzone.mindshopui.models.Product;
 
-public class HomeFragment extends BaseFragment {
+import java.util.ArrayList;
+
+public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.ItemClickListener {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+    MyRecyclerViewAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         setHasOptionsMenu(true);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        ArrayList<String> Products = (new Product()).getBTNProducts();
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = binding.productsRecylerView;
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new MyRecyclerViewAdapter(getContext(), Products);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
         return root;
     }
 
@@ -59,5 +75,11 @@ public class HomeFragment extends BaseFragment {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        view.getBackground().setTint(view.getResources().getColor(R.color.black, null));
+        Log.d("Test", "The selected Item " + adapter.getItem(position));
     }
 }

@@ -9,7 +9,6 @@ public class ProductOptions implements Serializable
 {
     @DocumentId
     public String id;
-
     public String title;
     public ArrayList<String> values;
 }

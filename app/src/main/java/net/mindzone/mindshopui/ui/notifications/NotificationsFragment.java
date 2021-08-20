@@ -29,20 +29,12 @@ public class NotificationsFragment extends BaseFragment {
 
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
         binding.btnMainv2.setOnClickListener(this::MovingToOnboarding);
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
     public void MovingToOnboarding(View v) {
-        Log.d("Test","Moving to onBoarding");
+        Log.d("Test", "Moving to onBoarding");
         Intent intent = new Intent();
         intent.setClass(getActivity(), onBoarding.class);
         getActivity().startActivity(intent);

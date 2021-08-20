@@ -9,6 +9,4 @@
     <bitmap
         android:gravity="center"
         android:src="@drawable/app_logo"/>
-
-
 </shape>
