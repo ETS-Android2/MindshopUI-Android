@@ -4,6 +4,7 @@
     <string name="title_profile">Profile</string>
     <string name="title_notifications">Notifications</string>
     <string name="signINBTN">SIGN IN</string>
+    <string name="actionMenu">SIGN UP</string>
     <string name="signuserNameText">Name</string>
     <string name="signuserEmailText">Email</string>
     <string name="signuserpwText">Password</string>
