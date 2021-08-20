@@ -1,5 +1,6 @@
 package net.mindzone.mindshopui.ui.profile;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import net.mindzone.mindshopui.BaseFragment;
+import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends BaseFragment {
@@ -24,14 +26,6 @@ public class ProfileFragment extends BaseFragment {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textProfile;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
