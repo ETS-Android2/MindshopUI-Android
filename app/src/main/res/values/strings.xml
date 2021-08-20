@@ -13,6 +13,8 @@
     <string name="signbottomtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer maximus accumsan erat id facilisis.</string>
     <string name="signlowertext">Or Sign in with social media</string>
     <string name="imgNotFound">imgNotFound</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>

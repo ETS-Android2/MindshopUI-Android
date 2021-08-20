@@ -19,4 +19,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_mainv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#e1e1e1"
+        android:onClick="MovingToOnboarding"
+        android:text="Button"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/text_notifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/PillShapeAppearance" />
 </androidx.constraintlayout.widget.ConstraintLayout>

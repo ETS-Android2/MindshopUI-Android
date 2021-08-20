@@ -1,6 +1,8 @@
 package net.mindzone.mindshopui.ui.notifications;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import net.mindzone.mindshopui.BaseFragment;
+import net.mindzone.mindshopui.activities.onBoarding;
 import net.mindzone.mindshopui.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends BaseFragment {
@@ -27,6 +30,7 @@ public class NotificationsFragment extends BaseFragment {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.btnMainv2.setOnClickListener(this::MovingToOnboarding);
         final TextView textView = binding.textNotifications;
         notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -35,6 +39,13 @@ public class NotificationsFragment extends BaseFragment {
             }
         });
         return root;
+    }
+
+    public void MovingToOnboarding(View v) {
+        Log.d("Test","Moving to onBoarding");
+        Intent intent = new Intent();
+        intent.setClass(getActivity(), onBoarding.class);
+        getActivity().startActivity(intent);
     }
 
     @Override
