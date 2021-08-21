@@ -9,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
@@ -18,25 +17,35 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import net.mindzone.mindshopui.BaseFragment;
 import net.mindzone.mindshopui.R;
+import net.mindzone.mindshopui.RecyclerViewAdapters.ProductsRecyclerViewAdapter;
 import net.mindzone.mindshopui.activities.Sign;
-import net.mindzone.mindshopui.constants.MyRecyclerViewAdapter;
+import net.mindzone.mindshopui.RecyclerViewAdapters.MyRecyclerViewAdapter;
 import net.mindzone.mindshopui.databinding.FragmentHomeBinding;
 import net.mindzone.mindshopui.models.Product;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.ItemClickListener {
+public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.ItemClickListener,ProductsRecyclerViewAdapter.ItemClickListener {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     MyRecyclerViewAdapter adapter;
+    ProductsRecyclerViewAdapter adapter_salesItems;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         setHasOptionsMenu(true);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        ArrayList<String> Products = (new Product()).getBTNProducts();
+        binding.chartBtn.setOnClickListener(this::cartBTNClicked);
+        ConstructeRecylcerViews();
+        return root;
+    }
+
+    public void ConstructeRecylcerViews() {
+
+        //        Construction of First RecylerView which contain the buttons
+        ArrayList<String> Products = Product.getBTNProducts();
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = binding.productsRecylerView;
@@ -44,9 +53,28 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
         adapter = new MyRecyclerViewAdapter(getContext(), Products);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
-        return root;
+
+//        Construction of Second RecylerView which are the sales discount cards
+        ArrayList<Product> products_sale = Product.getProducts();
+        Log.d("Test","Count "+ products_sale.size());
+        LinearLayoutManager layoutManagerRC2
+                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView_SalesItems = binding.itemsRecylerView;
+        recyclerView_SalesItems.setLayoutManager(layoutManagerRC2);
+        adapter_salesItems = new ProductsRecyclerViewAdapter(getContext(), products_sale);
+        adapter_salesItems.setClickListener(this);
+        recyclerView_SalesItems.setAdapter(adapter_salesItems);
     }
 
+    public void cartBTNClicked(View v){
+        goToSignIn();
+    }
+
+    public void goToSignIn(){
+        Intent intent = new Intent();
+        intent.setClass(getActivity(), Sign.class);
+        getActivity().startActivity(intent);
+    }
 
     @Override
     public void onDestroyView() {
@@ -67,9 +95,7 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
                 Log.d("Test", "Bell Icon clicked");
                 return true;
             case R.id.cartBTN:
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), Sign.class);
-                getActivity().startActivity(intent);
+                goToSignIn();
                 Log.d("Test", "Cart Icon clicked");
                 return true;
             default:
@@ -80,6 +106,5 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
     @Override
     public void onItemClick(View view, int position) {
         view.getBackground().setTint(view.getResources().getColor(R.color.black, null));
-        Log.d("Test", "The selected Item " + adapter.getItem(position));
     }
 }
