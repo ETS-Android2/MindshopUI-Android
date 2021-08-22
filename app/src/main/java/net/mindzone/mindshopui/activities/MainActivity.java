@@ -1,6 +1,7 @@
 package net.mindzone.mindshopui.activities;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;

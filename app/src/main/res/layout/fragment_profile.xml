@@ -96,9 +96,11 @@
                         android:src="@drawable/profile_iconblack" />
 
                     <Button
+                        android:id="@+id/account_btn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
+                        android:onClick="navigateToAccount"
                         android:text="@string/Account"
                         android:textAlignment="textStart"
                         android:textColor="@color/black"
@@ -134,9 +136,11 @@
                     android:src="@drawable/orders" />
 
                 <Button
+                    android:id="@+id/orders_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
+                    android:onClick="navigateToOrders"
                     android:text="@string/Orders"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
@@ -171,9 +175,11 @@
                     android:src="@drawable/settings_icon" />
 
                 <Button
+                    android:id="@+id/setting_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
+                    android:onClick="navigateToSettings"
                     android:text="@string/settings"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
