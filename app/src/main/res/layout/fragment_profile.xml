@@ -141,7 +141,7 @@
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:onClick="navigateToOrders"
-                    android:text="@string/Orders"
+                    android:text="@string/OrderModel"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="14sp" />

@@ -21,11 +21,12 @@ import net.mindzone.mindshopui.RecyclerViewAdapters.ProductsRecyclerViewAdapter;
 import net.mindzone.mindshopui.activities.Sign;
 import net.mindzone.mindshopui.RecyclerViewAdapters.MyRecyclerViewAdapter;
 import net.mindzone.mindshopui.databinding.FragmentHomeBinding;
+import net.mindzone.mindshopui.models.Category;
 import net.mindzone.mindshopui.models.Product;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.ItemClickListener,ProductsRecyclerViewAdapter.ItemClickListener {
+public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.ItemClickListener, ProductsRecyclerViewAdapter.ItemClickListener {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
@@ -45,18 +46,18 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
     public void ConstructeRecylcerViews() {
 
         //        Construction of First RecylerView which contain the buttons
-        ArrayList<String> Products = Product.getBTNProducts();
+        ArrayList<String> categories = Category.getCategories();
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = binding.productsRecylerView;
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new MyRecyclerViewAdapter(getContext(), Products);
+        adapter = new MyRecyclerViewAdapter(getContext(), categories);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
 //        Construction of Second RecylerView which are the sales discount cards
         ArrayList<Product> products_sale = Product.getProducts();
-        Log.d("Test","Count "+ products_sale.size());
+        Log.d("Test", "Count " + products_sale.size());
         LinearLayoutManager layoutManagerRC2
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView_SalesItems = binding.itemsRecylerView;
@@ -66,11 +67,11 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
         recyclerView_SalesItems.setAdapter(adapter_salesItems);
     }
 
-    public void cartBTNClicked(View v){
+    public void cartBTNClicked(View v) {
         goToSignIn();
     }
 
-    public void goToSignIn(){
+    public void goToSignIn() {
         Intent intent = new Intent();
         intent.setClass(getActivity(), Sign.class);
         getActivity().startActivity(intent);

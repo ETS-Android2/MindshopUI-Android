@@ -26,14 +26,7 @@ public class Product implements Serializable {
         this.price_afterDiscount = price_afterDiscount;
     }
 
-    public static ArrayList<String> getBTNProducts() {
-        ArrayList<String> Products = new ArrayList<>();
-        Products.add("Shoes");
-        Products.add("Trousers");
-        Products.add("Skirts");
-        Products.add("Other");
-        return Products;
-    }
+
     public static ArrayList<Product> getProducts() {
         ArrayList<Product> Products = new ArrayList<>();
         Products.add(new Product("Camelia Heels",64,50,125));

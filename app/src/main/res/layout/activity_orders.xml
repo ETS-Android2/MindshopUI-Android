@@ -4,6 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/_F6F6F6"
     tools:context=".activities.Orders">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@drawable/layout_roundercorner"
+        android:backgroundTint="@color/white"
+        android:id="@+id/orders_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
