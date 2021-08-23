@@ -5,4 +5,9 @@
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
 </resources>

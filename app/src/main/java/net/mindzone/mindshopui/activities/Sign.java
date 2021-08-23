@@ -9,11 +9,15 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.databinding.ActivitySignBinding;
@@ -64,6 +68,7 @@ public class Sign extends AppCompatActivity {
         binding.eyeBTN.setOnClickListener(this::eyeBTNClicked);
         binding.topElement.getLayoutParams().height = height / 5;
         binding.forgetPassword.setOnClickListener(this::forgotPW);
+        binding.btnMain.setOnClickListener(this::siginBTNClicked);
         setContentView(view);
     }
 
@@ -75,6 +80,14 @@ public class Sign extends AppCompatActivity {
             binding.eyeBTN.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_crossed, 0);
             binding.passwordEditText.setInputType(129);
         }
+    }
+
+    public void siginBTNClicked(View v) {
+        Log.d("Test", "Sign btn clicked");
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.success_popup, (LinearLayout) findViewById(R.id.main_container));
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 
     public void forgotPW(View v) {

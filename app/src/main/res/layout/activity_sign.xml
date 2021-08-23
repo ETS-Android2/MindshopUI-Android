@@ -160,6 +160,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:backgroundTint="@color/black"
+            android:onClick="siginBTNClicked"
             android:text="@string/signINBTN"
             android:textColor="@color/white"
             app:shapeAppearanceOverlay="@style/PillShapeAppearance" />
