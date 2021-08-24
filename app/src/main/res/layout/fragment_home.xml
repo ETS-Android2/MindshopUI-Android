@@ -165,37 +165,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:contentDescription="@string/TODO"
-                        android:src="@drawable/ic_baseline_star_24" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:contentDescription="@string/TODO"
-                        android:src="@drawable/ic_baseline_star_24" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:contentDescription="@string/TODO"
-                        android:src="@drawable/ic_baseline_star_24" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:contentDescription="@string/TODO"
-                        android:src="@drawable/ic_baseline_star_24" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:contentDescription="@string/TODO"
-                        android:src="@drawable/ic_baseline_star_24" />
+                <include layout="@layout/stars"/>
 
                     <TextView
+                        android:layout_marginStart="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="4.9"
