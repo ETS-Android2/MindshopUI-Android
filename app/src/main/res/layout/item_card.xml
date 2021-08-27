@@ -91,7 +91,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginStart="10dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/love_black" />
+                android:src="@drawable/black_heart" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

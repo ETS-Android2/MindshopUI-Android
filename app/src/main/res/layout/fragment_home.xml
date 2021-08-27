@@ -94,7 +94,7 @@
                         android:text="@string/pendingOrders"
                         android:textColor="@color/white"
                         android:textSize="14sp"
-                        app:drawableStartCompat="@drawable/purse" />
+                        app:drawableStartCompat="@drawable/ic_purse" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -189,7 +189,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="10dp"
                     android:contentDescription="@string/TODO"
-                    android:src="@drawable/love_icon" />
+                    android:src="@drawable/red_heart" />
 
 
                 <ImageButton
@@ -199,7 +199,7 @@
                     android:layout_height="30dp"
                     android:background="@drawable/rounded_corner_btn"
                     android:contentDescription="TODO"
-                    android:src="@drawable/shopping_cart_white" />
+                    android:src="@drawable/shoppingcartwhite" />
 
             </LinearLayout>
 
