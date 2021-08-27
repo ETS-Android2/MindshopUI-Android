@@ -85,7 +85,7 @@ public class Sign extends AppCompatActivity {
     public void siginBTNClicked(View v) {
         Log.d("Test", "Sign btn clicked");
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
-        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.success_popup, findViewById(R.id.main_container));
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.orderinfo_popup, findViewById(R.id.main_container));
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }

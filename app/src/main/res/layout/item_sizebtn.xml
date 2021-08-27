@@ -10,8 +10,8 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="35dp"
-        android:layout_height="45dp"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
         android:backgroundTint="@color/_F6F6F6"
         android:stateListAnimator="@null"
         app:cornerRadius="5dp" />
@@ -28,8 +28,8 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="35dp"
-            android:layout_height="45dp"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
             android:backgroundTint="@color/black"
             android:stateListAnimator="@null"
             app:cornerRadius="5dp" />
@@ -47,8 +47,8 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="35dp"
-            android:layout_height="45dp"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
             android:backgroundTint="@color/_F6F6F6"
             android:stateListAnimator="@null"
             app:cornerRadius="5dp" />
@@ -65,8 +65,8 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="35dp"
-            android:layout_height="45dp"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
             android:backgroundTint="@color/_F6F6F6"
             android:stateListAnimator="@null"
             app:cornerRadius="5dp" />

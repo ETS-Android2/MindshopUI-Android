@@ -8,6 +8,6 @@
     <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="android:background">@android:color/transparent</item>
     </style>
-    <style name="MyButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless"></style>
+
 
 </resources>
