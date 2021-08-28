@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 
@@ -45,6 +46,6 @@ public class Orders extends AppCompatActivity implements  OrdersRecylcerViewAdap
 
     @Override
     public void onItemClick(View view, int position) {
-        view.getBackground().setTint(view.getResources().getColor(R.color.black, null));
+        Log.d("Test","Click on Order Item = "+position);
     }
 }

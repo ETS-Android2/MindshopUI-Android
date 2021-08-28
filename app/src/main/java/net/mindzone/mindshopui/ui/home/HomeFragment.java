@@ -15,9 +15,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import net.mindzone.mindshopui.BaseFragment;
 import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.RecyclerViewAdapters.ProductsRecyclerViewAdapter;
+import net.mindzone.mindshopui.activities.MyCart;
 import net.mindzone.mindshopui.activities.Sign;
 import net.mindzone.mindshopui.RecyclerViewAdapters.MyRecyclerViewAdapter;
 import net.mindzone.mindshopui.databinding.FragmentHomeBinding;
@@ -39,13 +42,13 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         binding.chartBtn.setOnClickListener(this::cartBTNClicked);
-        ConstructeRecylcerViews();
+        ConstructRecyclerViews();
         return root;
     }
 
-    public void ConstructeRecylcerViews() {
+    public void ConstructRecyclerViews() {
 
-        //        Construction of First RecylerView which contain the buttons
+        //        Construction of First RecyclerView which contain the buttons
         ArrayList<String> categories = Category.getCategories();
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -55,7 +58,7 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
-//        Construction of Second RecylerView which are the sales discount cards
+//        Construction of Second RecyclerView which are the sales discount cards
         ArrayList<Product> products_sale = Product.getProducts();
         Log.d("Test", "Count " + products_sale.size());
         LinearLayoutManager layoutManagerRC2
@@ -68,14 +71,11 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
     }
 
     public void cartBTNClicked(View v) {
-        goToSignIn();
-    }
-
-    public void goToSignIn() {
         Intent intent = new Intent();
-        intent.setClass(getActivity(), Sign.class);
+        intent.setClass(getActivity(), MyCart.class);
         getActivity().startActivity(intent);
     }
+
 
     @Override
     public void onDestroyView() {
@@ -96,7 +96,9 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
                 Log.d("Test", "Bell Icon clicked");
                 return true;
             case R.id.cartBTN:
-                goToSignIn();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), Sign.class);
+                getActivity().startActivity(intent);
                 Log.d("Test", "Cart Icon clicked");
                 return true;
             default:
@@ -106,6 +108,10 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
 
     @Override
     public void onItemClick(View view, int position) {
-        view.getBackground().setTint(view.getResources().getColor(R.color.black, null));
+        Log.d("Test", "ana hena");
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetDialogTheme);
+        View bottomSheetView = LayoutInflater.from(getContext()).inflate(R.layout.orderinfo_popup, binding.getRoot().findViewById(R.id.main_container));
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 }

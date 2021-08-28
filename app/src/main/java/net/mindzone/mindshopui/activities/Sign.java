@@ -2,22 +2,16 @@ package net.mindzone.mindshopui.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.databinding.ActivitySignBinding;
@@ -84,10 +78,6 @@ public class Sign extends AppCompatActivity {
 
     public void siginBTNClicked(View v) {
         Log.d("Test", "Sign btn clicked");
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
-        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.orderinfo_popup, findViewById(R.id.main_container));
-        bottomSheetDialog.setContentView(bottomSheetView);
-        bottomSheetDialog.show();
     }
 
     public void forgotPW(View v) {
