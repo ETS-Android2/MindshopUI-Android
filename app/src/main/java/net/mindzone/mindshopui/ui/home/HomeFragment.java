@@ -21,6 +21,7 @@ import net.mindzone.mindshopui.BaseFragment;
 import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.RecyclerViewAdapters.ProductsRecyclerViewAdapter;
 import net.mindzone.mindshopui.activities.MyCart;
+import net.mindzone.mindshopui.activities.Payment;
 import net.mindzone.mindshopui.activities.Sign;
 import net.mindzone.mindshopui.RecyclerViewAdapters.MyRecyclerViewAdapter;
 import net.mindzone.mindshopui.databinding.FragmentHomeBinding;
@@ -72,7 +73,8 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
 
     public void cartBTNClicked(View v) {
         Intent intent = new Intent();
-        intent.setClass(getActivity(), MyCart.class);
+//        intent.setClass(getActivity(), MyCart.class);
+        intent.setClass(getActivity(), Payment.class);
         getActivity().startActivity(intent);
     }
 

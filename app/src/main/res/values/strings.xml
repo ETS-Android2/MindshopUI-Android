@@ -34,6 +34,9 @@
     <string name="addToCart">ADD TO CART</string>
     <string name="checkout">CHECK OUT</string>
     <string name="subtotal">subtotal</string>
+    <string name="buy">BUY NOW</string>
+    <string name="Total">Total</string>
+    <string name="shippingAddress">Shipping Address</string>
 
 
 </resources>

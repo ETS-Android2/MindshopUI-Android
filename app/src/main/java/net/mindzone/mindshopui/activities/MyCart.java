@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import net.mindzone.mindshopui.R;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class MyCart extends AppCompatActivity implements CartRecyclerViewAdapter.ItemClickListener {
 
     CartRecyclerViewAdapter cartRecyclerViewAdapter;
+    ArrayList<MyCartItems> myCartItems = MyCartItems.getItemsCart();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,10 @@ public class MyCart extends AppCompatActivity implements CartRecyclerViewAdapter
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.white, null)));
         getSupportActionBar().setTitle("My Cart");
         setContentView(R.layout.activity_mycart);
-        ArrayList<OrderModel> Orders = OrderModel.getOrders();
-        ArrayList<MyCartItems> myCartItems = MyCartItems.getItemsCart();
+        constructRecyclerView();
+    }
+
+    private void constructRecyclerView() {
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         RecyclerView orders_recyclerView = findViewById(R.id.myCartRecyclerView);
@@ -42,6 +46,6 @@ public class MyCart extends AppCompatActivity implements CartRecyclerViewAdapter
 
     @Override
     public void onItemClick(View view, int position) {
-
+        Log.d("Test", "Click on the following item in cart " + myCartItems.get(position).toString());
     }
 }
