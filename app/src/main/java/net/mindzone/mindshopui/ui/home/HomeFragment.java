@@ -73,8 +73,7 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
 
     public void cartBTNClicked(View v) {
         Intent intent = new Intent();
-//        intent.setClass(getActivity(), MyCart.class);
-        intent.setClass(getActivity(), Payment.class);
+        intent.setClass(getActivity(), MyCart.class);
         getActivity().startActivity(intent);
     }
 

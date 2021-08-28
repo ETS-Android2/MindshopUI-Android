@@ -52,12 +52,13 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_main"
+            android:id="@+id/checkoutBTN"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="40dp"
             android:layout_marginVertical="10dp"
             android:backgroundTint="@color/_E41A4A"
+            android:onClick="goToPaymentPage"
             android:text="@string/checkout"
             android:textColor="@color/white"
             app:shapeAppearanceOverlay="@style/PillShapeAppearance" />

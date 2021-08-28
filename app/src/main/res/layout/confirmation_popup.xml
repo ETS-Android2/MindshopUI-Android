@@ -42,7 +42,7 @@
             android:textSize="12sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_main"
+            android:id="@+id/orderConfirmBTN"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="50dp"

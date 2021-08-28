@@ -10,11 +10,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="1000dp"
             android:orientation="vertical">
 
             <!--Shipping Info   -->
@@ -22,13 +23,18 @@
 
             <!--Product Information & Delivery Services   -->
             <include layout="@layout/iteminfo_deliveryservice" />
+            <!--Add Description & Payment Method    -->
+            <include layout="@layout/description_paymentmethod" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
         </LinearLayout>
 
     </ScrollView>
 
     <!--    Bottom Card-->
     <LinearLayout
-        android:id="@+id/bottomContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/popup_sheet"
