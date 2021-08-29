@@ -15,13 +15,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-
 import net.mindzone.mindshopui.BaseFragment;
+import net.mindzone.mindshopui.Popups.ItemPopupBottomSheet;
 import net.mindzone.mindshopui.R;
 import net.mindzone.mindshopui.RecyclerViewAdapters.ProductsRecyclerViewAdapter;
 import net.mindzone.mindshopui.activities.MyCart;
-import net.mindzone.mindshopui.activities.Payment;
 import net.mindzone.mindshopui.activities.Sign;
 import net.mindzone.mindshopui.RecyclerViewAdapters.MyRecyclerViewAdapter;
 import net.mindzone.mindshopui.databinding.FragmentHomeBinding;
@@ -61,7 +59,6 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
 
 //        Construction of Second RecyclerView which are the sales discount cards
         ArrayList<Product> products_sale = Product.getProducts();
-        Log.d("Test", "Count " + products_sale.size());
         LinearLayoutManager layoutManagerRC2
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView_SalesItems = binding.itemsRecylerView;
@@ -109,10 +106,7 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
 
     @Override
     public void onItemClick(View view, int position) {
-        Log.d("Test", "ana hena");
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetDialogTheme);
-        View bottomSheetView = LayoutInflater.from(getContext()).inflate(R.layout.orderinfo_popup, binding.getRoot().findViewById(R.id.main_container));
-        bottomSheetDialog.setContentView(bottomSheetView);
-        bottomSheetDialog.show();
+        ItemPopupBottomSheet itemPopupBottomSheet = new ItemPopupBottomSheet();
+        itemPopupBottomSheet.show(getChildFragmentManager(), "itemPopupBottomSheet");
     }
 }

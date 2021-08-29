@@ -23,9 +23,11 @@
     <color name="_F6F6F6">#F6F6F6</color>
     <color name="_6B6B6B">#6B6B6B</color>
     <color name="_e6e6e6">#e6e6e6</color>
+    <color name="_1AE4E4E4">#1AE4E4E4</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="_4057636F">#4057636F</color>
 </resources>

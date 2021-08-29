@@ -2,9 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/_57636F"
-    android:theme="@style/BottomSheetDialogTheme">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/main_container"
@@ -35,9 +33,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginVertical="10dp"
             android:text="Thank you for purchasing.\n We will contact You as son as possible."
+            android:textAlignment="center"
             android:textColor="@color/_9A9A9A"
             android:textSize="12sp" />
 
@@ -46,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="50dp"
-            android:layout_marginVertical="10dp"
+            android:layout_marginBottom="30dp"
             android:backgroundTint="@color/black"
             android:text="@string/continue_shopping"
             android:textColor="@color/white"

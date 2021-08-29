@@ -1,6 +1,7 @@
 package net.mindzone.mindshopui.RecyclerViewAdapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,12 +56,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         @Override
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            Log.d("ana hena", "what's now");
         }
     }
 
-    public String getItem(int id) {
-        return mData.get(id);
-    }
 
     public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;

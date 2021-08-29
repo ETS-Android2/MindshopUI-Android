@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/_E4E4E4"
     android:theme="@style/BottomSheetDialogTheme">
 
     <LinearLayout
@@ -269,7 +268,7 @@
                     android:id="@+id/item_Info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="15dp"
                     android:lineSpacingExtra="5dp"
                     android:maxLines="3"
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -282,10 +281,10 @@
                     android:id="@+id/addToCart"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginVertical="10dp"
                     android:backgroundTint="@color/black"
                     android:text="@string/addToCart"
                     android:textColor="@color/white"
+                    android:layout_marginBottom="30dp"
                     app:shapeAppearanceOverlay="@style/PillShapeAppearance" />
             </LinearLayout>
         </LinearLayout>
