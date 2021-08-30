@@ -50,7 +50,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         ViewHolder(View itemView) {
             super(itemView);
             btn_forProducts = itemView.findViewById(R.id.btn_forProducts);
-            itemView.setOnClickListener(this);
+            btn_forProducts.setOnClickListener(this);
         }
 
         @Override

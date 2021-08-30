@@ -1,6 +1,7 @@
 package net.mindzone.mindshopui.ui.home;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.button.MaterialButton;
 
 import net.mindzone.mindshopui.BaseFragment;
 import net.mindzone.mindshopui.Popups.ItemPopupBottomSheet;
@@ -33,7 +36,9 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     MyRecyclerViewAdapter adapter;
+    RecyclerView recyclerView;
     ProductsRecyclerViewAdapter adapter_salesItems;
+    ArrayList<String> categories = Category.getCategories();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
@@ -48,10 +53,9 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
     public void ConstructRecyclerViews() {
 
         //        Construction of First RecyclerView which contain the buttons
-        ArrayList<String> categories = Category.getCategories();
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = binding.productsRecylerView;
+        recyclerView = binding.productsRecylerView;
         recyclerView.setLayoutManager(layoutManager);
         adapter = new MyRecyclerViewAdapter(getContext(), categories);
         adapter.setClickListener(this);
@@ -106,7 +110,21 @@ public class HomeFragment extends BaseFragment implements MyRecyclerViewAdapter.
 
     @Override
     public void onItemClick(View view, int position) {
-        ItemPopupBottomSheet itemPopupBottomSheet = new ItemPopupBottomSheet();
-        itemPopupBottomSheet.show(getChildFragmentManager(), "itemPopupBottomSheet");
+        if (view.getId() == R.id.btn_forProducts) {
+            MaterialButton selectedBTN = (MaterialButton) recyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.btn_forProducts);
+            for (int i = 0; i < categories.size(); i++) {
+                MaterialButton button_List = (MaterialButton) recyclerView.findViewHolderForAdapterPosition(i).itemView.findViewById(R.id.btn_forProducts);
+                if (button_List.getText().equals(selectedBTN.getText())) {
+                    selectedBTN.setBackgroundColor(getResources().getColor(R.color.black, null));
+                    selectedBTN.setTextColor(getResources().getColor(R.color.white, null));
+                } else {
+                    button_List.setBackgroundColor(getResources().getColor(R.color.white, null));
+                    button_List.setTextColor(getResources().getColor(R.color.black, null));
+                }
+            }
+        } else {
+            ItemPopupBottomSheet itemPopupBottomSheet = new ItemPopupBottomSheet();
+            itemPopupBottomSheet.show(getChildFragmentManager(), "itemPopupBottomSheet");
+        }
     }
 }
