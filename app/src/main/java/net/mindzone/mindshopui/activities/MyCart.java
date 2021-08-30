@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -27,7 +26,6 @@ import net.mindzone.mindshopui.models.MyCartItems;
 
 public class MyCart extends AppCompatActivity implements CartRecyclerViewAdapter.ItemClickListener {
     CartRecyclerViewAdapter cartRecyclerViewAdapter;
-    SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView orders_recyclerView;
     ActivityMycartBinding binding;
     ArrayList<MyCartItems> myCartItems = MyCartItems.getItemsCart();
@@ -84,7 +82,6 @@ public class MyCart extends AppCompatActivity implements CartRecyclerViewAdapter
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         orders_recyclerView = binding.myCartRecyclerView;
-        swipeRefreshLayout = binding.swipeRefreshLayout;
         orders_recyclerView.setLayoutManager(layoutManager);
 
         cartRecyclerViewAdapter = new CartRecyclerViewAdapter(this, myCartItems);
